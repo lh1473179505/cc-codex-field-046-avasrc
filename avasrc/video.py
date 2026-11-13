@@ -19,6 +19,7 @@ class VideoClock:
     pts_seconds: list[float]
     clap_frame: int | None
     clap_label: str | None
+    tail_mark_frame: int | None = None
 
 
 def load_clock(path: str) -> VideoClock:
@@ -32,4 +33,5 @@ def load_clock(path: str) -> VideoClock:
         pts_seconds=pts,
         clap_frame=doc.get("clap_frame"),
         clap_label=doc.get("clap_label"),
+        tail_mark_frame=doc.get("tail_mark_frame"),
     )
